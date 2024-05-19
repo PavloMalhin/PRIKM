@@ -1,18 +1,21 @@
 pipeline {
     agent any
 
+environment {
+            DOCKER_IMAGE = 'pavlomalhin/prikm'
+      }
     stages {
         stage('Start') {
             steps {
-                echo 'Lab_2: started by GitHub'
+                echo 'Lab_4: start for monitoring'
             }
         }
 
         stage('Image build') {
             steps {
                 sh "docker build -t prikm:latest ."
-                sh "docker tag prikm pavlomalhin/prikm:latest"
-                sh "docker tag prikm pavlomalhin/prikm:$BUILD_NUMBER"
+                sh "docker tag prikm pavlomalhin/prikm $DOCKER_IMAGE:latest"
+                sh "docker tag prikm pavlomalhin/prikm $DOCKER_IMAGE:$BUILD_NUMBER"
             }
             post{
                 failure {
@@ -28,8 +31,8 @@ pipeline {
             steps {
                 withDockerRegistry([ credentialsId: "dockerhub_token", url: "" ])
                 {
-                    sh "docker push pavlomalhin/prikm:latest"
-                    sh "docker push pavlomalhin/prikm:$BUILD_NUMBER"
+                    sh "docker push pavlomalhin/prikm $DOCKER_IMAGE:latest"
+                    sh "docker push pavlomalhin/prikm $DOCKER_IMAGE:$BUILD_NUMBER"
                 }
             }
             post{
@@ -44,10 +47,10 @@ pipeline {
 
         stage('Deploy image'){
             steps{
-                sh "docker stop \$(docker ps -q) || true"
+                sh "docker stop \$docker ps | grep '$DOCKER_IMAGE' | awk '{print \$1}'(docker ps -q) || true"
                 sh "docker container prune --force"
                 sh "docker image prune --force"
-                sh "docker run -d -p 80:80 pavlomalhin/prikm"
+                sh "docker run -d -p 80:80 $DOCKER_IMAGE"
             }
             post{
                 failure {
