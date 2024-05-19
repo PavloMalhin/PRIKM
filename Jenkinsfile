@@ -14,8 +14,8 @@ environment {
         stage('Image build') {
             steps {
                 sh "docker build -t prikm:latest ."
-                sh "docker tag prikm pavlomalhin/prikm $DOCKER_IMAGE:latest"
-                sh "docker tag prikm pavlomalhin/prikm $DOCKER_IMAGE:$BUILD_NUMBER"
+                sh "docker tag prikm $DOCKER_IMAGE:latest"
+                sh "docker tag prikm $DOCKER_IMAGE:$BUILD_NUMBER"
             }
             post{
                 failure {
@@ -31,8 +31,8 @@ environment {
             steps {
                 withDockerRegistry([ credentialsId: "dockerhub_token", url: "" ])
                 {
-                    sh "docker push pavlomalhin/prikm $DOCKER_IMAGE:latest"
-                    sh "docker push pavlomalhin/prikm $DOCKER_IMAGE:$BUILD_NUMBER"
+                    sh "docker push $DOCKER_IMAGE:latest"
+                    sh "docker push $DOCKER_IMAGE:$BUILD_NUMBER"
                 }
             }
             post{

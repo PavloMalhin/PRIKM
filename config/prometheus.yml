@@ -27,4 +27,4 @@ scrape_configs:
   - job_name: 'jenkins'
     metrics_path: '/prometheus'
     static_configs:
-      - targets: ['didactic-lamp-976q4qj7gvxw2796p.github.dev']
+      - targets: ['didactic-lamp-976q4qj7gvxw2796p-8080.app.github.dev']
