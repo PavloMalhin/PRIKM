@@ -47,7 +47,7 @@ environment {
 
         stage('Deploy image'){
             steps{
-                sh "docker container stop \$(docker ps -q | grep '$DOCKER_IMAGE' | awk '{print \$1}') || true"
+                sh "docker stop \$(docker ps | grep '$DOCKER_IMAGE' | awk '{print \$1}') || true"
                 sh "docker container prune --force"
                 sh "docker image prune --force"
                 sh "docker run -d -p 80:80 $DOCKER_IMAGE"
