@@ -1,0 +1,302 @@
+body{
+	background: center center fixed no-repeat url("./src/fon.jpg");
+	-webkit-background-size: cover;
+     -moz-background-size: cover;
+	 -o-background-size: cover;
+	 background-size: cover;
+	 font-family: 'Orbitron', sans-serif;
+	 background-position: right;
+}
+header{
+	position:fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: row;
+	width: 70vw;
+	height: 120px;
+	justify-content: flex-start;
+
+}
+main{
+	display: flex;
+	flex-direction: column;
+	width: 60vw;
+	height: 60vh;
+	font-size: 1.25rem;
+	margin-top: 10%;
+	background: rgba(55,55,55,0.7);
+	border-radius: 1rem;
+	overflow:scroll;
+	justify-content: center;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+
+}
+main>div{
+color:white;
+margin:1rem;
+font-family: 'Roboto', sans-serif; 
+font-size: 1rem;
+}
+.conteiner{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	margin: 10px auto;
+	align-content: center;
+	justify-content: space-around;	
+}
+.logo{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.novbar{
+	width: 60%;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+.logotextG,.logotext{
+	display: flex;
+	font-size:1.8rem;
+	color: #000000;
+}
+.logotextG{
+	color:#619214;
+	font-weight: 40rem;
+
+}
+.button,.buttonactiv{
+	display: flex;
+	color: black;
+	font-size:1rem;
+	transition: color 0.2s;
+	}
+.button:hover{
+	color:green;
+}
+.buttonactiv:hover{
+	color: black;
+}
+.buttonactiv{
+	color: green;
+}
+.emails_info{
+	width: 100%;
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-top: 10%
+}
+footer{
+	display: flex;
+	position: fixed;
+	width: 100%;
+	height: 4.15rem;
+	flex-direction: row;
+	bottom: 0%;
+	left: 0%;
+	background: rgba(0, 0, 0, 0.35);
+}
+.footerct{
+	display:flex;
+	height: 100%;
+	width: 25%;
+	justify-content: space-around;
+	flex-direction: row;
+	margin: auto 0;
+	align-items: center;
+}
+#sizefooter{
+	height: 2.5rem;
+	width: 2.5rem;
+}
+.main{
+	display:flex;
+	width: 100%;
+	height: 95vh;
+	flex-direction: column;
+	justify-content: center;
+
+}	
+a{
+  text-decoration: none;
+}
+.content{
+	display : flex;
+	flex-direction: row;
+	padding-left:1.25rem;
+	align-items: center;
+
+}
+.content_textG{
+	color: green;
+}
+.info{
+	
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 1.25em;
+	align-items: center;
+	
+}
+.hugeinfoG{
+	color:#214006;
+}
+.infoaboutus{
+	display : flex;
+	flex-direction: row;
+	width: auto;
+	height: auto;
+	position: 0;
+}
+.info_text{
+	display:flex;
+	height: 80%;
+	width: 97%;
+    justify-content: center;
+}
+.infotxt{
+	display:flex;
+	height: 80%;
+	width: 97%;
+    justify-content: center;
+}
+@media screen and (min-width: 1360px){
+  html
+  {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 582px){
+  html
+  {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 582px){
+  html
+  {
+    font-size: 20px;
+  }
+}
+@media(max-width: 1400px)
+{
+	body{
+		background: center center fixed no-repeat url("./src/fon_v4.png");
+		-webkit-background-size: cover;
+     -moz-background-size: cover;
+	 -o-background-size: cover;
+	 background-size: cover;
+		background-position: right;
+	}
+	
+}
+@media(max-width: 1200px){
+	p{
+		margin:0;
+	}
+	.logo{
+		width: 100vw;
+	}
+	.conteiner{
+		flex-direction: column;
+		padding-left: 15px; 
+	}
+	.novbar{
+
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.footerct{
+		width: 40%;
+	}
+	main{
+		margin-top: 20%;
+		height: 50vh;
+	}
+	.info_text{
+		width: 95%;
+	}
+}
+@media(max-width: 700px){
+	main{
+		margin-top: 37%;
+		height: 50vh;
+	}
+	.info_text{
+		width: 90%;
+	}
+}
+@media(max-width: 550px)
+{
+	body{
+		background: center center fixed no-repeat url("./src/fon_v6.png");
+		background-position: right;
+		-webkit-background-size: cover;
+     -moz-background-size: cover;
+	 -o-background-size: cover;
+	 background-size: cover;
+	    
+	}
+	.content{
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+	.novbar{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.infoaboutus{
+		flex-direction: column;
+		justify-content: center;
+	}
+	.content_text,.content_textG{
+		font-size: 1rem;
+	}
+	.footerct{
+		width: 50%;
+	}
+}
+@media(max-width: 500px)
+{
+	.logotextG,.logotext{
+		font-size: 1.6rem;
+	}
+	main{
+		margin-top: 50%;
+		height: 50vh;
+	}
+}
+@media(max-width: 350px)
+{
+	main{
+		margin-top: 65%;
+		height: 50vh;
+	}
+}
