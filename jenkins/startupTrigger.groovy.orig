@@ -2,8 +2,11 @@ import jenkins.model.*
 
 
 def instance = Jenkins.getInstance()
-
+<<<<<<< HEAD
+def job = instance.getItem('Lab_7')
+=======
 def job = instance.getItem('Lab_5')
+>>>>>>> origin/Lab_6
 
 
 if (job) {
